@@ -1,0 +1,113 @@
+<h1>This is app html</h1>
+
+<router-outlet></router-outlet>
+
+<router-outlet name="channel1"></router-outlet>
+
+<router-outlet name="channel2"></router-outlet>
+
+<router-outlet name="channel3"></router-outlet>
+<!-- <h1>This is the Angular project</h1>
+
+<div *ngIf ="msg;then update_msg;else error_msg">
+  This has been displayed sucessfully
+</div>
+
+<ng-template #error_msg>
+   There was an error in NGIF
+</ng-template>
+
+<ng-template #update_msg>
+  There is an updated msg
+</ng-template>-->
+<!-- Structural directive 
+          used to design and add the feature for html layout, responsible for shaping, 
+        reshaping , adding,  removing or manuplating the elements and its represented by "*" symbol-->
+<!-- a* NGIF
+   built in structural directive, which can add or remove the elements for the template
+  Conditionally includes the template based on expression
+  Resolves true or else result -->
+
+<!--  -->
+
+<!-- <h2>{{print1}}</h2> 
+<div *ngFor = "let a of contacts">
+  
+  <h2>ID:{{a.ID}}   Name:{{a.fn}} {{a.ln}}</h2>
+
+</div> -->
+
+Print first and last element only
+<ol >
+  <div *ngFor="let a of contacts;index as i;
+                  first as f;last as l;even as e; odd as o">
+    <!-- <li  *ngIf="f" style="background-color:yellow">
+     
+        {{i+1}} ID:{{a.ID}}   Name:{{a.fn}} {{a.ln}}      
+    </li>
+    <br>
+    <li  *ngIf="l" style="background-color:green">     
+      {{i+1}} ID:{{a.ID}}   Name:{{a.fn}} {{a.ln}}    
+  </li> -->
+  </div>
+  
+</ol>
+
+Print odd and even only
+<ol >
+  <div *ngFor="let a of contacts;index as i;
+                  first as f;last as l;even as e; odd as o">
+    <li  *ngIf="e" style="background-color:yellow">
+     
+        {{i+1}} ID:{{a.ID}}   Name:{{a.fn}} {{a.ln}}      
+    </li>
+   
+    <li  *ngIf="o" style="background-color:green">     
+      {{i+1}} ID:{{a.ID}}   Name:{{a.fn}} {{a.ln}}    
+  </li>
+  </div>
+  
+</ol>
+
+<table>
+  <thead> 
+    <th>Index</th>ID<th>First Name</th><th>Last name</th>
+  </thead>
+   
+      <tbody *ngFor="let a of contacts;index as i;
+      even as e; odd as o">
+        <tr *ngIf="e" style="background-color:yellow">
+          <td >{{i+1}} </td>
+          <td>{{a.ID}}  </td>
+          <td>{{a.fn}} </td>
+          <td>{{a.ln}}</td>          
+        </tr>
+        <tr  *ngIf="o" style="background-color:greenyellow">
+          <td >{{i+1}}</td>
+          <td>{{a.ID}} </td>
+          <td>{{a.fn}} </td>
+          <td>{{a.ln}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Print first element only
+<ol *ngFor="let a of contacts;index as i;first as f;">
+  <li  *ngIf="f" style="background-color:yellow">
+    <div>
+      {{i+1}} ID:{{a.ID}}   Name:{{a.fn}} {{a.ln}}
+    </div>
+    
+  </li>
+</ol> -->
+
+ <!--<app-cop1></app-cop1>
+ <app-cop2></app-cop2>
+<app-cop3></app-cop3> -->
+
+<!-- Angular Routing 
+      Routing is the mechanism used by angular framwork 
+      to managed the path and routes of diffrent components
+      in out angular application.
+     -->
+

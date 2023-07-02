@@ -1,0 +1,31 @@
+<br><br>
+<form #addForm="ngForm" (submit)="fun1(addForm)">
+    <label>Firstname:</label>
+    <input type="text"[(ngModel)]="firstname" name="firstname" minlength="10" maxlength="20" required>
+    <br>
+    <label>Select one :</label><select name="chooseoption" [(ngModel)]="chooseoption" id="">
+        <option value="option one">Option One</option>
+        <option value="option two">Option Two</option>
+        <option value="option three">Option Three</option>
+        <option value="option four">Option Four</option>
+    </select>
+    <br>
+    <input type="checkbox" [(ngModel)]="checkbox" name="checkbox" required>Agree for terms and condition <br><br>
+    
+
+    <textarea [ngModel]="descr" name="descr" maxlength="20" required></textarea> <br><br>
+    <button type="submit" [disabled]="!addForm.valid" >Submit</button> <br>
+    <!-- <button type="reset">Reset</button> -->
+   <button (click)="resetForm(addForm)">Reset</button>
+   <button (click)="setValues(addForm)">SetValues</button>
+</form>
+//{{firstname}}
+
+<!-- Validation for our form
+        Required 
+        minLength
+        maxLength
+        Checked
+        Disable the submit button if the form is not valid -->
+
+

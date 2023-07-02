@@ -1,0 +1,22 @@
+p{
+    background-color:yellow
+}
+
+.c1{
+    background-color: red;
+    color:yellow;
+}
+
+.c2{
+    background-color: green;
+    color:white;
+}
+
+.c3{
+    font-size: 34px;
+}
+
+.c4{
+    border: 4px solid black;
+}
+

@@ -1,0 +1,172 @@
+<p>cop1 works!</p>
+<!--  -->
+<div [ngSwitch]="superpower">
+
+    <div *ngSwitchCase="'Batman'">
+        THis is powr of Batman
+    </div >
+
+    <div *ngSwitchCase="'Flash'">
+        THis is powr of Flash
+    </div>
+
+    <div *ngSwitchCase="'Wonderwoman'">
+        THis is powr of Wonderwoman
+    </div>
+
+    <div *ngSwitchCase="'Superman'">
+        THis is powr of Superman
+    </div>
+
+    <div *ngSwitchCase="'AquaMan'">
+        THis is powr of AquaMan
+    </div>
+</div>
+
+<div [ngStyle]="{'color':'green'}">This is the NgStyle structural directive</div>
+
+<div [ngStyle]="{'color':r,'background-color':g}">This is the NgStyle structural directive</div>
+
+<div [ngStyle]="{color:r === 'red'?'red':'blue'}">This is the third block</div>
+
+<!-- 
+    *NGSTYLE
+            Used to set style/css properties
+            syntax: [ngStyle]
+            Can have more than one style properties and also pass dynamic values to style
+ -->
+
+ <!-- 
+    ngClass
+        Let us set the class for the element
+        Syntx: <div [ngClass]="value">
+        Dynamic vlaues can be passed in
+                1.with strings
+                2.with arrays
+                3.with objects 
+  -->
+
+  <h1 class="c1">{{sentance}}</h1>
+
+  <div [ngClass]="'c1 c3'">This is an ngImports</div>
+
+  <div [ngClass]="class">This is an ngClass Imports</div>
+
+  <div [ngClass]=" class === 'c1'?'c1 c2':'c3 c4'">This is an conditional ngClass Imports</div>
+
+  <div [ngClass]="{c4:true, c2:false,c1:true}">This is boolean value</div>
+
+   <!--  Data binding Interpolation -->
+
+   Data binding Interpolation 
+   <h1 class="c1">{{sentance}}</h1>
+
+  <!--  Data binding Property binding -->
+
+  Data binding Interpolation 
+  <div [innerHTML] = "sentance"></div>
+
+  <h1 [title]="h" >This is the COP! heading</h1>
+
+  <h2 [style.color]="g">{{h}}</h2>
+<br>
+<br>
+
+
+  <!--  Data binding Attribute binding -->
+  <!-- allows user to nind properties of element from component to template-->
+  <table style="background-color: grey;">
+    <tr>
+        <td>Value One</td>
+        <td>Value two</td>
+        <td>Value Three</td>
+    </tr>
+    <tr>
+        <td [attr.colspan]="val">Value Four</td>
+        <td>Value Five</td>
+        <td>Value Six</td>
+    </tr>
+  </table>
+  <br>
+  <br>
+
+  <!--  Data binding Event binding -->
+  <button  (click)="hello()"> Click on it</button>
+
+  <div (mouseover) ='b(1,2,"yuu")'>mouseove me</div>
+
+   <div (mouseover) ='c(true,true,false)'>mouseove me</div>
+
+   <br>
+    <br>
+  <!--  Data binding Two Way binding -->
+    <!-- it allows the user to bind events as well as the property at the same time
+    data flows ffrom component to template and te,plate to component 
+    When we bind the data using the two way -->
+
+    <input [(ngModel)]="superpower"><span>{{superpower}}</span>
+
+    <p [innerHTML]="superpower"></p>
+   
+    <button mat-button color="primary">Primary</button>
+
+    
+    <!-- Angular PIPES
+            Pipes are used to transformdata
+            Pipes will take the data input
+    -->
+    <h2>Anugular pipes</h2>
+
+    <div> 
+        {{lowerCase | lowercase}}
+        <br>
+        {{upperCase | uppercase}}
+    </div>
+
+    <div>
+        {{date_exm | date }}
+    </div>
+
+    <div>
+        {{obj | json}}
+    </div>
+
+    <div>
+        {{numval | currency }}
+    </div>
+
+    <div>
+        {{numval2 | percent}}
+    </div>
+
+    <!-- Parmeterized pipes -->
+
+    <h3>Parmeterized pipes Angular</h3>
+    <div>
+        {{numval | currency : 'GBP'}}
+    </div>
+
+    <div>
+        {{date_exm | date : 'dd-MM-yy' }}
+    </div>
+
+    <div>
+        {{date_exm | date : 'long' }}
+    </div>
+
+    <div>
+        {{date_exm | date : 'short' }}
+    </div>
+
+    <div>
+        {{numval2 | percent : '2.1-4'}}
+    </div>
+
+    <h3>Chaining Parmeterized pipes Angular</h3>
+    <div>
+        {{obj | json | uppercase}}
+    </div>
+
+    <div>
+        {{date_exm | date : 'long' | lowercase}}
+    </div>
